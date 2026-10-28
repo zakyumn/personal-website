@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal website of Zaky Elmoge.">
+  <title>Zaky Elmoge | About Me</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #337ab7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #23527c;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+
+    header {
+      border-bottom: 1px solid #eee;
+      background: white;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 75px;
+    }
+
+    .site-title {
+      font-size: 21px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .site-title:hover {
+      color: #333;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding: 10px 0;
+      color: #555;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #333;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    /* Page layout */
+
+    .layout {
+      display: grid;
+      grid-template-columns: 245px 1fr;
+      gap: 65px;
+      padding-top: 55px;
+      align-items: start;
+    }
+
+    /* Left sidebar */
+
+    .sidebar {
+      padding-top: 5px;
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 22px;
+      border-radius: 50%;
+      background: #f1f2f3;
+      color: #666;
+      font-size: 42px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      line-height: 1.3;
+      color: #333;
+    }
+
+    .sidebar .description {
+      margin: 0 0 23px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .social-links a {
+      color: #666;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #337ab7;
+      text-decoration: underline;
+    }
+
+    /* About Me */
+
+    main {
+      max-width: 790px;
+    }
+
+    h1 {
+      margin: 0 0 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 29px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    main p {
+      margin: 0 0 20px;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    footer {
+      margin-top: 90px;
+      padding: 25px 0;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* Mobile layout */
+
+    @media (max-width: 750px) {
+      .navigation {
+        min-height: 65px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 30px;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+      }
+
+      .sidebar .description {
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      footer {
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navigation">
+      <a href="/" class="site-title">Zaky Elmoge</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about" class="nav-link">About Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container layout">
+
+    <aside class="sidebar">
+      <div class="avatar" aria-label="Zaky Elmoge initials">ZE</div>
+
+      <h2>Zaky Elmoge</h2>
+
+      <p class="description">
+        Computer Science Student<br>
+        University of Minnesota
+      </p>
+
+      <div class="social-links">
+        <a href="mailto:elmog004@umn.edu">Email</a>
+
+        <a href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+        <a href="https://github.com/zakyumn"
+           target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </aside>
+
+    <main id="about">
+      <h1>About Me</h1>
+
+      <p>
+        Hi, I'm Zaky Elmoge, a computer science student at the
+        University of Minnesota Twin Cities.
+      </p>
+
+      <p>
+        I'm interested in software development, artificial intelligence,
+        and exploring how technology can be used to solve real-world
+        problems.
+      </p>
+
+      <p>
+        This website is a place to share a little about myself
+        and what I'm working on.
+      </p>
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Zaky Elmoge.
+    </div>
+  </footer>
+
+</body>
+</html>
